@@ -25,14 +25,7 @@ ALINE has parameters that can be tuned for desired output. These parameters are:
 In this implementation, some parameters have been changed from their default 
 values as described in [1], in order to replicate published results. All changes 
 are noted in comments.
-
-Example usage
--------------
-
-# Get optimal alignment of two phonetic sequences
-
->>> align('θin', 'tenwis')
-[[('θ', 't'), ('i', 'e'), ('n', 'n'), ('-', 'w'), ('-', 'i'), ('-', 's')]]
+An example usage is shown in aline.align().
 
 [1] G. Kondrak. Algorithms for Language Reconstruction. PhD dissertation, 
 University of Toronto.
@@ -372,7 +365,15 @@ def align(str1, str2, epsilon=0):
     :param epsilon: Adjusts threshold similarity score for near-optimal alignments
     
     :rtpye: list(list(tuple(str, str)))
-    :return: Alignment(s) of str1 and str2 
+    :return: Alignment(s) of str1 and str2
+    
+     Example usage
+    -------------
+    
+    # Get optimal alignment of two phonetic sequences
+
+    >>> align('θin', 'tenwis')
+    [[('θ', 't'), ('i', 'e'), ('n', 'n'), ('-', 'w'), ('-', 'i'), ('-', 's')]]
      
     (Kondrak 2002: 51)
     """
